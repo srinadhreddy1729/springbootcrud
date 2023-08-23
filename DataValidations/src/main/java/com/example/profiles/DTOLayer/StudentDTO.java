@@ -1,0 +1,109 @@
+package com.example.profiles.DTOLayer;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
+public class StudentDTO {
+	
+	private Integer id;
+	@NotEmpty    
+	private String  studentname;
+	@NotBlank  
+	
+	private String studentcollegename;
+	@NotNull 
+	private String studentfathername;
+	@Email 
+	private String studentemailid;
+	@Max(10)
+	private Long studentmobilenumber;
+	@Pattern(regexp="[A-Z]{5}[0-9]{4}[a-z]{2}")
+	private String studentpancard;
+	private Long studentidnumber;
+	@Min(3)
+	private Integer studentmarks;
+	private Long studentaadharnumber;
+	//@Pattern(regexp ="[A-Za-z]{3,}")
+	//@Pattern(regexp="^[a-zA-Z0-9]*$")
+	//@Pattern(regexp="^\\w+$")
+	//@Pattern(regexp="[0-9]{6}")
+	//@Pattern(regexp="^\\w+\\s+\\w+$")
+	//@Pattern(regexp="^[\\w\\s]+$")
+	private String studentcollegeaddres;
+
+	public String getStudentcollegeaddres() {
+		return studentcollegeaddres;
+	}
+	public void setStudentcollegeaddres(String studentcollegeaddres) {
+		this.studentcollegeaddres = studentcollegeaddres;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getStudentname() {
+		return studentname;
+	}
+	public void setStudentname(String studentname) {
+		this.studentname = studentname;
+	}
+	public String getStudentcollegename() {
+		return studentcollegename;
+	}
+	public void setStudentcollegename(String studentcollegename) {
+		this.studentcollegename = studentcollegename;
+	}
+	public String getStudentfathername() {
+		return studentfathername;
+	}
+	public void setStudentfathername(String studentfathername) {
+		this.studentfathername = studentfathername;
+	}
+	public String getStudentemailid() {
+		return studentemailid;
+	}
+	public void setStudentemailid(String studentemailid) {
+		this.studentemailid = studentemailid;
+	}
+	public Long getStudentmobilenumber() {
+		return studentmobilenumber;
+	}
+	public void setStudentmobilenumber(Long studentmobilenumber) {
+		this.studentmobilenumber = studentmobilenumber;
+	}
+	public String getStudentpancard() {
+		return studentpancard;
+	}
+	public void setStudentpancard(String studentpancard) {
+		this.studentpancard = studentpancard;
+	}
+	public Long getStudentidnumber() {
+		return studentidnumber;
+	}
+	public void setStudentidnumber(Long studentidnumber) {
+		this.studentidnumber = studentidnumber;
+	}
+	public Integer getStudentmarks() {
+		return studentmarks;
+	}
+	public void setStudentmarks(Integer studentmarks) {
+		this.studentmarks = studentmarks;
+	}
+	public Long getStudentaadharnumber() {
+		return studentaadharnumber;
+	}
+	public void setStudentaadharnumber(Long studentaadharnumber) {
+		this.studentaadharnumber = studentaadharnumber;
+	}
+
+
+}
