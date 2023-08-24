@@ -6,38 +6,38 @@ import jakarta.persistence.*;
 public class Phone {
 	@Id
 	@GeneratedValue(strategy =GenerationType.AUTO)
-	private Integer Id;
-	private Integer PhoneNumber;
-	private String PhoneCompanyName;
-	private Double PhoneCost;
-	public Integer getId() {
-		return Id;
+	private Integer id;
+	private Integer phonenumber;
+	private String phonecompanyname;
+	private Double phonecost;
+	public Integer getid() {
+		return id;
 	}
 	@Override
 	public String toString() {
-		return "Phone [Id=" + Id + ", PhoneNumber=" + PhoneNumber + ", PhoneCompanyName=" + PhoneCompanyName
-				+ ", PhoneCost=" + PhoneCost + "]";
+		return "Phone [id=" + id + ", phonenumber=" + phonenumber + ", phonecompanyname=" + phonecompanyname
+				+ ", phonecost=" + phonecost + "]";
 	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
-	public Integer getPhoneNumber() {
-		return PhoneNumber;
+	public Integer getPhonenumber() {
+		return phonenumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
-		PhoneNumber = phoneNumber;
+	public void setPhonenumber(Integer phonenumber) {
+		this.phonenumber = phonenumber;
 	}
-	public String getPhoneCompanyName() {
-		return PhoneCompanyName;
+	public String getPhonecompanyname() {
+		return phonecompanyname;
 	}
-	public void setPhoneCompanyName(String phoneCompanyName) {
-		PhoneCompanyName = phoneCompanyName;
+	public void setPhonecompanyname(String phonecompanyname) {
+		this.phonecompanyname = phonecompanyname;
 	}
-	public Double getPhoneCost() {
-		return PhoneCost;
+	public Double getPhonecost() {
+		return phonecost;
 	}
-	public void setPhoneCost(Double phoneCost) {
-		PhoneCost = phoneCost;
+	public void setPhonecost(Double phonecost) {
+		this.phonecost = phonecost;
 	}
 
 }

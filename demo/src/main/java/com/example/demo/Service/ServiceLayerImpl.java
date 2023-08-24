@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.demo.Entity.Phone;
 import com.example.demo.Repository.RepositoryLayer;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
+
 @Service
 public class ServiceLayerImpl implements ServiceLayetInter {
    @Autowired
@@ -20,7 +22,10 @@ public class ServiceLayerImpl implements ServiceLayetInter {
 	return slayer;
 }
 
-
+public Phone Find(Integer i)
+{
+	return slayer.findById(i).get();
+}
 public void setSlayer(RepositoryLayer slayer) {
 	this.slayer = slayer;
 }
@@ -37,22 +42,25 @@ public void setSlayer(RepositoryLayer slayer) {
 		 Phone jj=slayer.save(ph);
 		 return jj;
 	}
+	
 
 public Phone GettingSingleValue(int i)
 {
-         Phone jj=slayer.findById(i).get();
+         Phone jj=slayer.findbyPhoneNumber(i);
          return jj;
 }
 public void DeletingSingelValue(int j)
 {
     Phone uu=slayer.findById(j).get();
     slayer.delete(uu);
-    System.out.print("deleted");
+   
 	
 }
 public Phone updateSingleValue(Phone ph)
 {
 	   return slayer.save(ph);
 }
+
+
 
 }
