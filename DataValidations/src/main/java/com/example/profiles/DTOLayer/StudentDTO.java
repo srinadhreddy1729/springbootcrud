@@ -1,6 +1,15 @@
 package com.example.profiles.DTOLayer;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.regex.Matcher;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.validation.constraints.AssertFalse;
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -15,19 +24,21 @@ public class StudentDTO {
 	@NotEmpty    
 	private String  studentname;
 	@NotBlank  
-	
 	private String studentcollegename;
 	@NotNull 
 	private String studentfathername;
 	@Email 
 	private String studentemailid;
-	@Max(10)
+	@Max(5)
 	private Long studentmobilenumber;
 	@Pattern(regexp="[A-Z]{5}[0-9]{4}[a-z]{2}")
 	private String studentpancard;
 	private Long studentidnumber;
-	@Min(3)
+	@Min(2)
 	private Integer studentmarks;
+	//@Future  @Past
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate studentjoindate;
 	private Long studentaadharnumber;
 	//@Pattern(regexp ="[A-Za-z]{3,}")
 	//@Pattern(regexp="^[a-zA-Z0-9]*$")
@@ -35,12 +46,22 @@ public class StudentDTO {
 	//@Pattern(regexp="[0-9]{6}")
 	//@Pattern(regexp="^\\w+\\s+\\w+$")
 	//@Pattern(regexp="^[\\w\\s]+$")
-	private String studentcollegeaddres;
+	//@Pattern(regexp="[4-9][0-9]{9}")
+     
+	//@AssertTrue(message="it should be true")
+	//@AssertFalse(message="it should be false")
+	private Boolean studentcollegeaddres;
 
-	public String getStudentcollegeaddres() {
+	public LocalDate getStudentjoindate() {
+		return studentjoindate;
+	}
+	public void setStudentjoindate(LocalDate studentjoindate) {
+		this.studentjoindate = studentjoindate;
+	}
+	public Boolean getStudentcollegeaddres() {
 		return studentcollegeaddres;
 	}
-	public void setStudentcollegeaddres(String studentcollegeaddres) {
+	public void setStudentcollegeaddres(Boolean studentcollegeaddres) {
 		this.studentcollegeaddres = studentcollegeaddres;
 	}
 
@@ -97,6 +118,10 @@ public class StudentDTO {
 	}
 	public void setStudentmarks(Integer studentmarks) {
 		this.studentmarks = studentmarks;
+		
+
+
+		
 	}
 	public Long getStudentaadharnumber() {
 		return studentaadharnumber;
